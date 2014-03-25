@@ -596,6 +596,17 @@ SET( unzip_SRCS
 )
 SOURCE_GROUP( unzip FILES ${unzip_SRCS})
 
+SET( MSFS_SRCS
+        BGL.h
+        BGLParser.h
+        BGLParser.cpp
+        MSFSMDL2Parser.h
+        MSFSMDL2Parser.cpp
+        MSFSLoader.h
+        MSFSLoader.cpp
+        MSFSFileData.h
+)
+SOURCE_GROUP( MSFS FILES ${MSFS_SRCS})
 
 # VC2010 fixes
 if(MSVC10)
@@ -665,7 +676,8 @@ SET( assimp_src
 	${IFC_SRCS}
 	${XGL_SRCS}
 	${FBX_SRCS}
-	
+        ${MSFS_SRCS}
+
 	# Third-party libraries
 	${IrrXML_SRCS}
 	${ConvertUTF_SRCS}

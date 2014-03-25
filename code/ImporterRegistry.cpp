@@ -165,7 +165,8 @@ corresponding preprocessor flag to selectively disable formats.
 #endif 
 #ifndef ASSIMP_BUILD_NO_FBX_IMPORTER
 #   include "FBXImporter.h"
-#endif 
+#include "MSFSLoader.h"
+#endif
 
 namespace Assimp {
 
@@ -290,6 +291,9 @@ void GetImporterInstanceList(std::vector< BaseImporter* >& out)
 #endif
 #if ( !defined ASSIMP_BUILD_NO_FBX_IMPORTER )
 	out.push_back( new FBXImporter() );
+#endif
+#if ( !defined ASSIMP_BUILD_NO_MSFS_IMPORTER )
+   out.push_back( new MSFSLoader() );
 #endif
 }
 
