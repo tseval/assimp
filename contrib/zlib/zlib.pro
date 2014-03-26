@@ -7,6 +7,20 @@ TARGET = zlibstatic
 INCLUDEPATH += .
 CONFIG += staticlib
 
+CONFIG(debug, debug|release) {
+#   message(Bulding DEBUG version)
+   DBG_EXT=d
+   TARGET = $$join(TARGET,,,$$DBG_EXT)
+}
+
+contains(QMAKE_HOST.arch, x86_64) {
+   ARCH_EXT=_x64
+   TARGET = $$join(TARGET,,,$$ARCH_EXT)
+}
+
+target.path = ../../lib
+INSTALLS += target
+
 # Input
 HEADERS += crc32.h \
            deflate.h \

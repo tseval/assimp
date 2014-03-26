@@ -13,6 +13,20 @@ win32 {
    DEFINES += _CRT_SECURE_NO_WARNINGS
 }
 
+CONFIG(debug, debug|release) {
+#   message(Bulding DEBUG version)
+   DBG_EXT=d
+   TARGET = $$join(TARGET,,,$$DBG_EXT)
+}
+
+contains(QMAKE_HOST.arch, x86_64) {
+   ARCH_EXT=_x64
+   TARGET = $$join(TARGET,,,$$ARCH_EXT)
+}
+
+target.path = ../lib
+INSTALLS += target
+
 # Input
 HEADERS += 3DSHelper.h \
            3DSLoader.h \
@@ -398,6 +412,9 @@ SOURCES += 3DSConverter.cpp \
            XFileImporter.cpp \
            XFileParser.cpp \
            XGLLoader.cpp \
+           ../contrib/ConvertUTF/ConvertUTF.c \
+           ../contrib/unzip/ioapi.c \
+           ../contrib/unzip/unzip.c \
            ../contrib/poly2tri/poly2tri/common/shapes.cc \
            ../contrib/poly2tri/poly2tri/sweep/cdt.cc \
            ../contrib/poly2tri/poly2tri/sweep/advancing_front.cc \
