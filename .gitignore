@@ -1,1 +1,9 @@
 build
+CMakeFiles
+CMakeCache.txt
+*.cmake
+bin
+lib
+Makefile
+assimp.pc
+
