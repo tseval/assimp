@@ -4,7 +4,7 @@
 #include <list>
 #include "BGL.h"
 #include <cstdio>
-#include "Streamreader.h"
+#include "StreamReader.h"
 
 namespace Assimp
 {

@@ -1,9 +1,10 @@
+#include "AssimpPCH.h"
+#include <assimp/DefaultLogger.hpp>
+
 #include "MSFSMDL2Parser.h"
 #include "MSFSFileData.h"
 #include "Exceptional.h"
 
-#include "AssimpPCH.h"
-#include <assimp/DefaultLogger.hpp>
 
 using namespace Assimp;
 using namespace BGL;

@@ -39,10 +39,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ---------------------------------------------------------------------------
 */
 
+#include "AssimpPCH.h"
+
 #include <iostream>
 #include "BGLParser.h"
 
-#include "AssimpPCH.h"
 
 using namespace Assimp;
 using namespace BGL;
