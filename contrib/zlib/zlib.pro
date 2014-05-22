@@ -13,12 +13,12 @@ CONFIG(debug, debug|release) {
    TARGET = $$join(TARGET,,,$$DBG_EXT)
 }
 
+ARCH_EXT=32
 contains(QMAKE_HOST.arch, x86_64) {
-   ARCH_EXT=_x64
-   TARGET = $$join(TARGET,,,$$ARCH_EXT)
+   ARCH_EXT=64
 }
 
-target.path = ../../lib
+target.path = ../../lib$${ARCH_EXT}
 INSTALLS += target
 
 # Input
