@@ -47,6 +47,7 @@
 #include <cstdlib>
 #include <ostream>
 
+namespace Assimp {
 namespace ClipperLib {
 
 static long64 const loRange = 0x3FFFFFFF;
@@ -3444,3 +3445,4 @@ std::ostream& operator <<(std::ostream &s, Polygons &p)
 //------------------------------------------------------------------------------
 
 } //ClipperLib namespace
+} // Assimp namespace

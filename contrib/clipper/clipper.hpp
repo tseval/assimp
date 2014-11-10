@@ -40,6 +40,7 @@
 #include <cstdlib>
 #include <ostream>
 
+namespace Assimp {
 namespace ClipperLib {
 
 enum ClipType { ctIntersection, ctUnion, ctDifference, ctXor };
@@ -300,6 +301,7 @@ class clipperException : public std::exception
 //------------------------------------------------------------------------------
 
 } //ClipperLib namespace
+} // Assimp namespace
 
 #endif //clipper_hpp
 
