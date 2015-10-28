@@ -4,6 +4,8 @@ TARGET = assimp
 INCLUDEPATH += . BoostWorkaround ../contrib/zlib ../include
 CONFIG += staticlib
 
+CONFIG += c++11
+
 #DEFINES += ASSIMP_BUILD_DLL_EXPORT
 DEFINES += ASSIMP_BUILD_BOOST_WORKAROUND
 PRECOMPILED_HEADER = AssimpPCH.h
@@ -20,9 +22,15 @@ CONFIG(debug, debug|release) {
 }
 
 ARCH_EXT=32
-contains(QMAKE_TARGET.arch, x86_64) {
+#contains(QMAKE_TARGET.arch, x86_64) {
+#   ARCH_EXT=64
+##   TARGET = $$join(TARGET,,,$$ARCH_EXT)
+#}
+
+# This is apparently better supported than QMAKE_TARGET.arch
+# https://bugreports.qt.io/browse/QTBUG-30263
+contains(QT_ARCH, x86_64) {
    ARCH_EXT=64
-#   TARGET = $$join(TARGET,,,$$ARCH_EXT)
 }
 
 target.path = ../lib$${ARCH_EXT}

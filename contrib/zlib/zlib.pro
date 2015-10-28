@@ -14,7 +14,13 @@ CONFIG(debug, debug|release) {
 }
 
 ARCH_EXT=32
-contains(QMAKE_HOST.arch, x86_64) {
+#contains(QMAKE_HOST.arch, x86_64) {
+#   ARCH_EXT=64
+#}
+
+# This is apparently better supported than QMAKE_TARGET.arch
+# https://bugreports.qt.io/browse/QTBUG-30263
+contains(QT_ARCH, x86_64) {
    ARCH_EXT=64
 }
 
