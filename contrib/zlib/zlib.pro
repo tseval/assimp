@@ -13,6 +13,10 @@ CONFIG(debug, debug|release) {
    TARGET = $$join(TARGET,,,$$DBG_EXT)
 }
 
+win32 {
+   DESTDIR = $$shadowed($$PWD/../../)
+}
+
 ARCH_EXT=32
 #contains(QMAKE_HOST.arch, x86_64) {
 #   ARCH_EXT=64

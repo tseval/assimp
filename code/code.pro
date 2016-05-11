@@ -15,6 +15,10 @@ win32 {
    DEFINES += _CRT_SECURE_NO_WARNINGS
 }
 
+win32 {
+   DESTDIR = $$shadowed($$PWD/../)
+}
+
 CONFIG(debug, debug|release) {
 #   message(Bulding DEBUG version)
    DBG_EXT=d
